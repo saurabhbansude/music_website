@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title> Web music Player</title>
+</head>
+
+<body>
+
+    <div class="sidebar">
+      <div class="logo">
+        <a href="#">
+          <img src="img/logo.png" alt="Logo" />
+        </a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="index.html">
+              <span class="fa fa-home"></span>
+              <span>Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" id="toggleSearchBtn">
+              <span class="fa fa-search" ></span>
+              <span >Search</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <span class="fa fas fa-book"></span>
+              <span>Music Playlists</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="your plylist.html">
+              <span class="fa fas fa-plus-square"></span>
+              <span>Create Playlist</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="fa fas fa-heart"></span>
+              <span>Liked Songs</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="policies">
+        <ul>
+          <li>
+            <a href="#">Cookies</a>
+          </li>
+          <li>
+            <a href="#">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="topbar">
+        <div class="prev-next-buttons">
+          <button type="button" class="fa fas fa-chevron-left"></button>
+          <button type="button" class="fa fas fa-chevron-right"></button>
+        </div>
+        <div class="navbar">
+          <div class="search-bar">
+            <input type="text" id="songSearch" placeholder="Search for songs..." onkeyup="searchSongs()" style="display: none;"/>
+          </div>
+          <ul>
+             <li>
+              <a href="#">Download</a>
+            </li>
+            <li class="divider">|</li>
+            <li>
+              <a href="">Sign Up</a>
+            </li>
+          </ul>
+          <button id="yourLoginBtnId" onclick="toggleLogin()">Log In</button>
+        </div>
+      </div>
+
+      <div class="spotify-playlists" id="musics">
+        <h2> Marathi Songs</h2>
+
+        <div class="list" >
+          <div class="item" data-src="songs/sairat_zal.mp3">
+            <img src="img/img1.jpg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Sairat Zal Ji</h4>
+            <p>Ajay Atul | Sairat </p>
+          </div>
+
+          <div class="item" data-src="songs/bring_it.mp3">
+            <img src="img/img2.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Bring It On</h4>
+            <p>Jaundya Na Balasaheb  Ajay-Atul  Bhau Kadam & Saie Tamhankar</p>
+          </div>
+
+          <div class="item" data-src="songs/o_sheth.mp3">
+            <img src="img/img3.jpg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4 > O Sheth</h4>
+            <p>ओ शठ  SANDHYA KESHE & UMESH GAWALI</p>
+          </div>
+
+          <div class="item" data-src="songs/vinchu.mp3">
+            <img src="img/img4.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Tuzya Pirticha Vinchu chavla </h4>
+            <p>Ajay Gogawale Ajay - Atul Fandry.</p>
+          </div>
+
+          <div class="item" data-src="songs/chandra.mp3">
+            <img src="img/img8.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Chandra</h4>
+            <p>Chandramukhi Ajay - Atul feat Shreya Ghoshal Amruta</p>
+          </div>
+
+          <div class="item" data-src="songs/dolby.mp3">
+            <img src="img/img7.webp" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Dolby Walya</h4>
+            <p>  Jaundya Na Balasaheb Ajay-Atul Girish Kulkarni & Saie Tamhankar</p>
+          </div>
+
+          <div class="item" data-src="songs/madam.mp3">
+            <img src="img/img5.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Madam Kadak Hay </h4>
+            <p>Ekdam Kadak Manasi Naik Parth Bhalerao Tanaji Galgunde Umesh Gawali</p>
+          </div>
+
+          <div class="item" data-src="songs/saj.mp3">
+            <img src="img/saj.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Saaj Hyo Tuza </h4>
+            <p>Baban nkarswaroop Bhaurao Nanasaheb Karhade</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spotify-playlists" >
+        <h2>Hindi Songs</h2>
+        <div class="list">
+          <div class="item" data-src="songs/titli.mp3" >
+            <img src="img/titli.jpg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Titli</h4>
+            <p>Chennai Express Full Video Song  Shahrukh Khan, Deepika Padukone.mp3</p>
+          </div>
+
+          <div class="item" data-src="songs/rang.mp3">
+            <img src="img/rang.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>RANG </h4>
+            <p> SKY FORCE VEER P,SARA,NIMRAT TANISHK B SATINDER SARTAAJ</p>
+          </div>
+
+          <div class="item" data-src="songs/kesariya.mp3">
+            <img src="img/kesariya.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Kesariya</h4>
+            <p>Kesariya Brahmāstra Ranbir Alia Pritam Arijit Amitabh</p>
+          </div>
+
+          <div class="item" data-src="songs/ramaya.mp3">
+            <img src="img/ramaya.jpg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Jeene Laga Hoon</h4>
+            <p> Ramaiya VastavaiyaGirish Kumar,Shruti Haasan Atif Aslam,Shreya Ghoshal</p>
+          </div>
+
+          <div class="item" data-src="songs/Sahiba Music Video Jasleen Royal Vijay Deverakonda Radhikka MadanStebin PriyaAditya Sudhanshu.mp3">
+            <img src="img/sahiba.jpg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Sahiba</h4>
+            <p>Jasleen Royal Vijay Deverakonda Radhikka MadanStebin PriyaAditya Sudhanshu</p>
+          </div>
+          
+          <div class="item" data-src="songs/poster.mp3">
+            <img src="img/poster.jpg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Main Rang Sharbaton Ka </h4>
+            <p> Arijit Singh Phata Poster Nikhla Hero </p>
+          </div>
+
+          <div class="item" data-src="songs/Himesh Reshammiya, Ankit Tiwari, Palak Muchhal - Sanam Teri Kasam - Title Song (Lyric Video).mp3">
+            <img src="img/sanam.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Sanam Teri Kasam</h4>
+            <p>Himesh Reshammiya, Ankit Tiwari,Palak Muchhal Sanam Teri Kasam</p>
+          </div>
+
+          <div class="item" data-src="songs/Aankhein Khuli Song  Mohabbatein  Shah Rukh Khan, Aishwarya Rai  Lata Mangeshkar, Udit Narayan.mp3">
+            <img src="img/pyar.jpg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Aankhein Khuli</h4>
+            <p> Mohabbatein Shah Rukh Khan, Aishwarya Rai Lata Mangeshkar,Udit Narayan</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spotify-playlists" >
+        <h2>English Songs</h2>
+        <div class="list">
+          <div class="item" data-src="songs/Ed Sheeran - Shape of You (Official Music Video).mp3">
+            <img src="img/shape.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Shape of You</h4>
+            <p>Ed Sheeran Shape of You </p>
+          </div>
+
+          <div class="item" data-src="songs/Love Me Like You Do - Ellie Goulding (Lyrics)  Ed Sheeran, Powfu (Mix Lyrics).mp3">
+            <img src="img/loveme.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Love Me Like You Do </h4>
+            <p>Ellie Goulding Ed Sheeran, Powfu</p>
+          </div>
+
+          <div class="item" data-src="songs/One Direction - Night Changes.mp3">
+            <img src="img/onedirection.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>One Direction</h4>
+            <p>One Direction - Night Changes</p>
+          </div>
+
+          <div class="item" data-src="songs/Taylor Swift - Lover (Official Music Video).mp3">
+            <img src="img/lover.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Lover</h4>
+            <p>Taylor Swift - Lover </p>
+          </div>
+
+          <div class="item" data-src="songs/Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3">
+            <img src="img/diewith.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Die With A Smile</h4>
+            <p>Lady Gaga, Bruno Mars - Die With A Smile </p>
+          </div>
+
+          <div class="item" data-src="songs/Señorita - Shawn Mendes [Lyrics]  Ed Sheeran, One Direction, Ali Gatie.mp3">
+            <img src="img/senorita.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Señorita </h4>
+            <p> Shawn Mendes Ed Sheeran, One Direction, Ali Gatie</p>
+          </div>
+
+          <div class="item" data-src="songs/Shakira - Waka Waka (This Time for Africa) (The Official 2010 FIFA World Cup Song).mp3">
+            <img src="img/wakawaka.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>This Time for Africa</h4>
+            <p>Shakira - Waka Waka (This Time for Africa)</p>
+          </div>
+
+          <div class="item" data-src="songs/yung kai - blue (Lyrics).mp3">
+            <img src="img/blue.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Blue</h4>
+            <p>yung kai - blue</p>
+          </div>
+        </div>
+      </div>
+      <div class="spotify-playlists" >
+        <h2>Rap's</h2>
+        <div class="list">
+          <div class="item" data-src="songs/MILLIONAIRE SONG (Full Video)_ @YoYoHoneySingh   GLORY  BHUSHAN KUMAR.mp3" >
+            <img src="img/milinior.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>MILLIONAIRE  </h4>
+            <p> @YoYoHoneySingh   GLORY  BHUSHAN KUMAR</p>
+          </div>
+
+          <div class="item" data-src="songs/vartman.mp3">
+            <img src="img/vartman.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Vartman</h4>
+            <p>vartaman</p>
+          </div>
+
+          <div class="item" data-src="songs/Dhanda Nyoliwala  Russian Bandana (Music Video)  Deepesh Goyal  VYRL Haryanvi.mp3">
+            <img src="img/russian.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Russian Bandana</h4>
+            <p>Dhanda Nyoliwala Deepesh Goyal  VYRL Haryanvi</p>
+          </div>
+
+          <div class="item" data-src="songs/Hanumankind, Kalmi - Hanumankind  Big Dawgs  Prod. Kalmi (Official Music Video)  Def Jam India.mp3">
+            <img src="img/hanumankind.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>Hanumankind</h4>
+            <p> Kalmi - Hanumankind  Big Dawgs  Prod. Kalmi  Def Jam India</p>
+          </div>
+
+          <div class="item" data-src="songs/YUNG DSA - YEDA YUNG  OFFICIAL MUSIC VIDEO  PROD BY YD @yeardown  2024.mp3">
+            <img src="img/yug.jpeg" />
+            <div class="play">
+              <span class="fa fa-play"></span>
+            </div>
+            <h4>YUNG DSA </h4>
+            <p>YEDA YUNG  @yeardown  2024</p>
+          </div>
+        </div>
+      </div>
+     
+      <div class="spotify-playlists">
+        <h2>Your Playlist</h2>
+        <div class="list" id="customPlaylist">
+          <!-- Custom playlist items will be added here -->
+        </div>
+      </div>
+      
+    </div>
+
+       <!-- Audio Player & Controls -->
+       <div class="player-wrapper">
+        <div class="buttons">
+          <button id="prevBtn"><i class="fas fa-backward"></i></button>
+          <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+          <button id="nextBtn"><i class="fas fa-forward"></i></button>
+        </div>
+        <audio id="audio-player"  controls></audio>
+      </div>
+    
+  
+      <script src="script.js"></script>
+    <script>
+
+          const audio = document.getElementById("audio-player");
+          const playPauseBtn = document.getElementById("playPauseBtn");
+          const prevBtn = document.getElementById("prevBtn");
+          const nextBtn = document.getElementById("nextBtn");
+        
+          const items = document.querySelectorAll(".item");
+          let currentSongIndex = -1;
+        
+          // Play selected song
+          items.forEach((item, index) => {
+            item.addEventListener("click", () => {
+              const src = item.getAttribute("data-src");
+              if (src) {
+                audio.src = src;
+                audio.play();
+                currentSongIndex = index;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+              }
+            });
+          });
+        
+          // Play/Pause toggle
+          playPauseBtn.addEventListener("click", () => {
+            if (audio.paused) {
+              audio.play();
+              playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+              audio.pause();
+              playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+          });
+        
+          // Next song
+          nextBtn.addEventListener("click", () => {
+            if (currentSongIndex < items.length - 1) {
+              currentSongIndex++;
+            } else {
+              currentSongIndex = 0;
+            }
+            playSongByIndex(currentSongIndex);
+          });
+        
+          // Previous song
+          prevBtn.addEventListener("click", () => {
+            if (currentSongIndex > 0) {
+              currentSongIndex--;
+            } else {
+              currentSongIndex = items.length - 1;
+            }
+            playSongByIndex(currentSongIndex);
+          });
+        
+          function playSongByIndex(index) {
+            const item = items[index];
+            const src = item.getAttribute("data-src");
+            if (src) {
+              audio.src = src;
+              audio.play();
+              playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+          }
+        
+          // Auto-play next song when current ends
+        audio.addEventListener("ended", () => {
+          if (currentSongIndex < items.length - 1) {
+            currentSongIndex++;
+          } else {
+            currentSongIndex = 0; // loop back to first song
+          }
+          playSongByIndex(currentSongIndex);
+        });
+        
+        </script>
+
+
+<script>
+  const searchInput = document.getElementById('songSearch');
+  const item = document.querySelectorAll('.item');
+
+  searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase();
+
+    item.forEach(item => {
+      const title = item.querySelector('h4').textContent.toLowerCase();
+      const artist = item.querySelector('p').textContent.toLowerCase();
+
+      if (title.includes(filter) || artist.includes(filter)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+<script>
+const toggleBtn = document.getElementById('toggleSearchBtn');
+const searcInput = document.getElementById('songSearch');
+
+toggleBtn.addEventListener('click', () => {
+  if (searcInput.style.display === 'none') {
+    searcInput.style.display = 'block';
+    searcInput.focus(); // Auto-focus when shown
+  } else {
+    searcInput.style.display = 'none';
+    searcInput.value = ''; // Clear search on close
+    searchSongs(); // Refresh song list if needed
+  }
+});
+
+
+
+
+</script>
+
+
+
+<script>
+
+const customPlaylist = document.getElementById("customPlaylist");
+
+// Load playlist from localStorage
+function loadPlaylist() {
+  const playlist = JSON.parse(localStorage.getItem("userPlaylist") || "[]");
+  
+  playlist.forEach(song => {
+    const item = document.createElement("div");
+    item.className = "item";
+    item.setAttribute("data-src", song.src);
+    item.innerHTML = `
+      <img src="${song.img}" />
+      <div class="play"><span class="fa fa-play"></span></div>
+      <h4>${song.title}</h4>
+      <p>${song.artist}</p>
+    `;
+
+    // Make the play button clickable and play the song
+    item.querySelector(".play").addEventListener("click", () => {
+      const audio = document.getElementById("audio-player");
+      audio.src = song.src; // Set the song source
+      audio.play(); // Play the audio
+    });
+
+    customPlaylist.appendChild(item);
+  });
+}
+
+const audi = document.getElementById("audio-player");
+  audi.addEventListener("ended", () => {
+    // Get the next song index
+    const playlist = JSON.parse(localStorage.getItem("userPlaylist") || "[]");
+    SongIndex = (SongIndex + 1) % playlist.length; // Loop back to the first song if at the end
+    const nextSong = playlist[currentSongIndex];
+    audi.src = nextSong.src; // Set the next song source
+    audi.play(); // Play the next song
+  });
+
+
+let SongIndex = 0;
+window.addEventListener("load", loadPlaylist);
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
